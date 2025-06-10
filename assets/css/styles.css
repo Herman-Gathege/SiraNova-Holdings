@@ -562,6 +562,10 @@ button:hover {
     text-align: center;
   }
 
+  .service-card {
+    text-align: center;
+  }
+
   .portfolio-overlay h3 {
     font-size: var(--text-base);
   }
