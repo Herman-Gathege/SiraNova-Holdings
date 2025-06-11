@@ -14,11 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
       burger.classList.remove("toggle");
     });
   });
-});
 
-
- document.addEventListener("DOMContentLoaded", function () {
-    const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  if (loadMoreBtn) {
     loadMoreBtn.addEventListener("click", () => {
       const hiddenItems = document.querySelectorAll(".portfolio-item.hidden");
 
@@ -31,4 +29,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loadMoreBtn.style.display = "none"; // hide button after loading
     });
-  });
+  }
+
+  // ✅ Add form submission handler here
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault(); // Stop default form submission
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        alert("Thank you! Your message has been sent.");
+        form.reset();
+      } else {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    });
+  }
+});
