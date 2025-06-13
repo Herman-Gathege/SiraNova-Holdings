@@ -444,6 +444,58 @@ button:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
 }
 
+/* Testimonials Section */
+.testimonials {
+  background-color: var(--light-accent);
+  padding: var(--space-xl) var(--space-sm);
+  text-align: center;
+  font-family: var(--font-primary);
+}
+
+.testimonials .section-title {
+  margin-bottom: var(--space-md);
+  font-size: var(--text-xl);
+  color: var(--primary-color);
+  font-family: var(--font-secondary);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.testimonial-card {
+  background: var(--bg-color);
+  padding: calc(var(--space-md) * 0.75); /* 1.5rem */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+  color: var(--text-color);
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: var(--text-sm);
+  font-family: var(--font-secondary);
+}
+
+
+
+
+
 /* Contact Section */
 #contact {
   background-color: var(--bg-light);
@@ -886,5 +938,9 @@ button:hover {
 
   .contact-form button {
     align-self: center;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
