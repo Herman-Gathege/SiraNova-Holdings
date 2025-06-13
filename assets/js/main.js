@@ -15,6 +15,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const counters = document.querySelectorAll(".count");
+  let started = false;
+
+  function startCount() {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute("data-target");
+        const current = +counter.innerText;
+        const increment = target / 100;
+
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  }
+
+  window.addEventListener("scroll", () => {
+    const stats = document.querySelector(".hero-stats");
+    const statsTop = stats.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (!started && statsTop < windowHeight) {
+      startCount();
+      started = true;
+    }
+  });
+
   const loadMoreBtn = document.getElementById("loadMoreBtn");
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener("click", () => {
@@ -54,3 +86,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+document.querySelectorAll('.faq-item').forEach((item) => {
+    item.addEventListener('toggle', function () {
+      if (this.open) {
+        document.querySelectorAll('.faq-item').forEach((otherItem) => {
+          if (otherItem !== this) {
+            otherItem.removeAttribute('open');
+          }
+        });
+      }
+    });
+  });

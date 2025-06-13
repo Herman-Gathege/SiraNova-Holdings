@@ -83,7 +83,7 @@
 }
 </script>
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -125,28 +125,53 @@
       </div>
     </div>
   </nav>
+
   <main>
+
     <header class="hero section">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1 data-aos="fade-up">Ready to Launch? <br>We Design Websites That Take You There.</h1>
-          <p data-aos="fade-up">
-            From standout personal sites to slick business pages and full-fledged ecommerce stores — we handle the tech,
-            the
-            design, and the details so you can shine.
-          </p>
-          <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Get Started</a>
-            <a href="#services" class="btn btn-outline">Learn More</a>
+      <div class="container hero-container">
+
+        <!-- Grid: Text + Image -->
+        <div class="hero-grid">
+          <div class="hero-content">
+            <h1 data-aos="fade-up">Ready to Launch? <br>We Design Websites That Take You There.</h1>
+            <p data-aos="fade-up">
+              From standout personal sites to slick business pages and full-fledged ecommerce stores — we handle the
+              tech, the design, and the details so you can shine.
+            </p>
+            <div class="hero-buttons">
+              <a href="#contact" class="btn btn-primary">Get Started</a>
+              <a href="#services" class="btn btn-outline">Learn More</a>
+            </div>
+          </div>
+
+          <div class="hero-image" data-aos="fade-left" loading="lazy">
+            <img src="assets/images/hero-image.png" alt="Web design illustration" />
           </div>
         </div>
 
-        <div class="hero-image" data-aos="fade-left" loading="lazy">
-          <img src="assets/images/hero-image.png" alt="Web design illustration" />
+        <!-- Stats Section -->
+        <div class="hero-stats" data-aos="fade-up">
+          <div class="stat">
+            <span class="count" data-target="120">0</span>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat">
+            <span class="count" data-target="80">0</span>
+            <p>Happy Clients</p>
+          </div>
+          <div class="stat">
+            <span class="count" data-target="15">0</span>
+            <p>Industries Served</p>
+          </div>
+          <div class="stat">
+            <span class="count" data-target="5">0</span>
+            <p>Years Experience</p>
+          </div>
         </div>
+
       </div>
     </header>
-
 
 
     <section class="section" id="services">
@@ -239,7 +264,6 @@
     </section>
 
 
-
     <section class="section" id="about">
       <div class="container about-grid">
         <div class="about-text">
@@ -257,6 +281,37 @@
         </div>
         <div class="about-image">
           <img src="assets/images/Team.png" alt="Our team at work">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+
+          <details class="faq-item">
+            <summary>How long does it take to build a website?</summary>
+            <p>It depends on the size and complexity. Simple sites can take 1–2 weeks, while ecommerce projects may take
+              3–5 weeks.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I update my website myself?</summary>
+            <p>Yes. We build on platforms that allow easy updates, and we can also train you on how to manage your site.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do you provide domain and hosting?</summary>
+            <p>We can help you purchase a domain and set up reliable hosting, or handle it all for you.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What does your pricing look like?</summary>
+            <p>Our prices vary depending on the scope. We offer flexible packages to match your budget and goals.</p>
+          </details>
+
         </div>
       </div>
     </section>
@@ -296,6 +351,7 @@
 
       </div>
     </section>
+
   </main>
 
   <footer class="section footer">
@@ -303,7 +359,7 @@
       <p>&copy; 2025 Webloom Tech. All rights reserved.</p>
       <p class="footer-links">
         <a href="#services">Services</a> |
-        <a href="#portfolio">Portfolio</a> |
+        <a href="#portfolio">Our Work</a> |
         <a href="#about">About</a> |
         <a href="#contact">Contact</a>
       </p>
