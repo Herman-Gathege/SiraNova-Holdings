@@ -40,7 +40,10 @@
   "@type": "Organization",
   "name": "Webloom Tech",
   "url": "https://webloom-tech.onrender.com/",
-  "logo": "https://webloom-tech.onrender.com/assets/images/logo.png",
+  "logo": {
+  "@type": "ImageObject",
+  "url": "https://webloom-tech.onrender.com/assets/images/logo.png"
+  },
   "description": "Webloom Tech - Your Web Development Partner. We design and build personal websites, business websites, and ecommerce stores.",
   "address": {
     "@type": "PostalAddress",
@@ -79,6 +82,21 @@
   ]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Webloom Tech",
+  "url": "https://webloom-tech.onrender.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://webloom-tech.onrender.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
 
 
 
