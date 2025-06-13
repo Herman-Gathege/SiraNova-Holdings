@@ -99,3 +99,39 @@ document.querySelectorAll('.faq-item').forEach((item) => {
       }
     });
   });
+
+  document.querySelector('.banner-btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('consultModal').style.display = 'block';
+  });
+
+  document.querySelector('.close-modal').addEventListener('click', function () {
+    document.getElementById('consultModal').style.display = 'none';
+  });
+
+  window.addEventListener('click', function (e) {
+    const modal = document.getElementById('consultModal');
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+   document.querySelectorAll('.banner-btn, .btn-primary').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      const contact = document.getElementById('contact');
+
+      if (contact) {
+        // Scroll into view
+        contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Add highlight class
+        contact.classList.add('highlight-flash');
+
+        // Remove highlight after animation
+        setTimeout(() => {
+          contact.classList.remove('highlight-flash');
+        }, 2000); // 2 seconds
+      }
+    });
+  });

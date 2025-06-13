@@ -100,6 +100,8 @@ button:hover {
   text-decoration: none;
   font-weight: bold;
   font-family: var(--font-secondary);
+  display: flex; /* 👈 make the contents line up horizontally */
+  align-items: center; /* 👈 vertically center text and image */
 }
 
 .logo-img {
@@ -111,8 +113,8 @@ button:hover {
 .logo-text {
   font-weight: bold;
   font-size: 1.2rem;
-  color: var(--text-color);
-  display: none;
+  color: var(--primary-color);
+  margin-left: 10px; /* 👈 spacing between text and image */
 }
 
 .nav-links {
@@ -623,6 +625,154 @@ button:hover {
   text-decoration: underline;
 }
 
+/* Free Consultation Banner */
+#freeConsultBanner {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-base);
+  font-weight: 500;
+  font-family: var(--font-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 998;
+}
+
+#freeConsultBanner p {
+  margin: 0;
+}
+
+.banner-btn {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  padding: 0.5rem 1rem;
+  margin-left: var(--space-sm);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.banner-btn:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+
+/* Consultation Modal */
+.consult-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal Content */
+.consult-modal-content {
+  background-color: var(--bg-color);
+  margin: 10% auto;
+  padding: var(--space-lg);
+  border-radius: 10px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.4s ease;
+  position: relative; /* Ensures close button is positioned within */
+}
+
+/* Modal Title */
+.consult-modal-content h3 {
+  font-size: var(--text-xl);
+  color: var(--primary-color);
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-secondary);
+}
+
+/* Modal Paragraph */
+.consult-modal-content p {
+  font-size: var(--text-base);
+  color: var(--text-color);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+/* Close Button */
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-modal:hover {
+  color: var(--accent-color);
+}
+
+@keyframes flashBackground {
+  0% { background-color: #fffcdb; }
+  50% { background-color: #fff1a8; }
+  100% { background-color: transparent; }
+}
+
+.highlight-flash {
+  animation: flashBackground 1.5s ease-in-out;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .consult-modal-content {
+    margin: 20% var(--space-sm);
+    padding: var(--space-md);
+  }
+
+  .close-modal {
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+  }
+
+   #freeConsultBanner {
+    font-size: var(--text-sm);
+    padding: var(--space-sm);
+  }
+
+  .banner-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  #freeConsultBanner p {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+
+
 
 
 
@@ -642,9 +792,9 @@ button:hover {
 
 @media (max-width: 768px) {
 
-   .logo-img {
+   /* .logo-img {
     display: none;
-  }
+  } */
 
   .logo-text {
     display: inline;
