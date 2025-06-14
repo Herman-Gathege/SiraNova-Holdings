@@ -208,11 +208,34 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ✅ Form Submission
+  // const form = document.getElementById('contactForm');
+  // if (form) {
+  //   form.addEventListener('submit', async function (e) {
+  //     e.preventDefault();
+  //     const formData = new FormData(form);
+  //     const response = await fetch(form.action, {
+  //       method: form.method,
+  //       body: formData,
+  //       headers: { 'Accept': 'application/json' }
+  //     });
+
+  //     if (response.ok) {
+  //       alert("Thank you! Your message has been sent.");
+  //       form.reset();
+  //     } else {
+  //       alert("Oops! There was a problem submitting your form.");
+  //     }
+  //   });
+  // }
+
   const form = document.getElementById('contactForm');
-  if (form) {
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const formData = new FormData(form);
+if (form) {
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
       const response = await fetch(form.action, {
         method: form.method,
         body: formData,
@@ -220,13 +243,20 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (response.ok) {
-        alert("Thank you! Your message has been sent.");
+        alert(" Thank you! Your message has been sent.");
         form.reset();
       } else {
-        alert("Oops! There was a problem submitting your form.");
+        alert(" Oops! There was a problem submitting your form.");
+        console.error("Formspree error:", await response.json());
       }
-    });
-  }
+
+    } catch (error) {
+      alert(" Network error. Please try again later.");
+      console.error("Network error during form submission:", error);
+    }
+  });
+}
+
 
   // ✅ FAQ Toggle Behavior
   document.querySelectorAll('.faq-item').forEach((item) => {
@@ -266,18 +296,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ✅ Scroll to Contact
-  document.querySelectorAll('.banner-btn, .btn-primary').forEach(button => {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-      const contact = document.getElementById('contact');
+//   document.querySelectorAll('.banner-btn, .btn-primary').forEach(button => {
+//     button.addEventListener('click', function (e) {
+//       e.preventDefault();
+//       const contact = document.getElementById('contact');
 
-      if (contact) {
-        contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        contact.classList.add('highlight-flash');
-        setTimeout(() => {
-          contact.classList.remove('highlight-flash');
-        }, 2000);
-      }
-    });
-  });
+//       if (contact) {
+//         contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+//         contact.classList.add('highlight-flash');
+//         setTimeout(() => {
+//           contact.classList.remove('highlight-flash');
+//         }, 2000);
+//       }
+//     });
+//   });
 });
