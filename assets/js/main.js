@@ -1,140 +1,4 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   const burger = document.querySelector(".burger");
-//   const navLinks = document.querySelector(".nav-links");
-
-//   burger.addEventListener("click", () => {
-//     navLinks.classList.toggle("open");
-//     burger.classList.toggle("toggle");
-//   });
-
-//   // 👇 Close nav on link click (mobile)
-//   document.querySelectorAll('.nav-links a').forEach(link => {
-//     link.addEventListener('click', () => {
-//       navLinks.classList.remove("open");
-//       burger.classList.remove("toggle");
-//     });
-//   });
-
-//   const counters = document.querySelectorAll(".count");
-//   let started = false;
-
-//   function startCount() {
-//     counters.forEach(counter => {
-//       const updateCount = () => {
-//         const target = +counter.getAttribute("data-target");
-//         const current = +counter.innerText;
-//         const increment = target / 100;
-
-//         if (current < target) {
-//           counter.innerText = Math.ceil(current + increment);
-//           setTimeout(updateCount, 20);
-//         } else {
-//           counter.innerText = target;
-//         }
-//       };
-//       updateCount();
-//     });
-//   }
-
-//   window.addEventListener("scroll", () => {
-//     const stats = document.querySelector(".hero-stats");
-//     const statsTop = stats.getBoundingClientRect().top;
-//     const windowHeight = window.innerHeight;
-
-//     if (!started && statsTop < windowHeight) {
-//       startCount();
-//       started = true;
-//     }
-//   });
-
-//   const loadMoreBtn = document.getElementById("loadMoreBtn");
-//   if (loadMoreBtn) {
-//     loadMoreBtn.addEventListener("click", () => {
-//       const hiddenItems = document.querySelectorAll(".portfolio-item.hidden");
-
-//       hiddenItems.forEach((item, index) => {
-//         setTimeout(() => {
-//           item.classList.remove("hidden");
-//           item.classList.add("fade-in");
-//         }, index * 100); // staggered reveal
-//       });
-
-//       loadMoreBtn.style.display = "none"; // hide button after loading
-//     });
-//   }
-
-//   // ✅ Add form submission handler here
-//   const form = document.getElementById('contactForm');
-//   if (form) {
-//     form.addEventListener('submit', async function (e) {
-//       e.preventDefault(); // Stop default form submission
-//       const formData = new FormData(form);
-//       const response = await fetch(form.action, {
-//         method: form.method,
-//         body: formData,
-//         headers: {
-//           'Accept': 'application/json'
-//         }
-//       });
-
-//       if (response.ok) {
-//         alert("Thank you! Your message has been sent.");
-//         form.reset();
-//       } else {
-//         alert("Oops! There was a problem submitting your form.");
-//       }
-//     });
-//   }
-// });
-
-
-// document.querySelectorAll('.faq-item').forEach((item) => {
-//     item.addEventListener('toggle', function () {
-//       if (this.open) {
-//         document.querySelectorAll('.faq-item').forEach((otherItem) => {
-//           if (otherItem !== this) {
-//             otherItem.removeAttribute('open');
-//           }
-//         });
-//       }
-//     });
-//   });
-
-//   document.querySelector('.banner-btn').addEventListener('click', function (e) {
-//     e.preventDefault();
-//     document.getElementById('consultModal').style.display = 'block';
-//   });
-
-//   document.querySelector('.close-modal').addEventListener('click', function () {
-//     document.getElementById('consultModal').style.display = 'none';
-//   });
-
-//   window.addEventListener('click', function (e) {
-//     const modal = document.getElementById('consultModal');
-//     if (e.target === modal) {
-//       modal.style.display = 'none';
-//     }
-//   });
-
-//    document.querySelectorAll('.banner-btn, .btn-primary').forEach(button => {
-//     button.addEventListener('click', function(e) {
-//       e.preventDefault();
-//       const contact = document.getElementById('contact');
-
-//       if (contact) {
-//         // Scroll into view
-//         contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-//         // Add highlight class
-//         contact.classList.add('highlight-flash');
-
-//         // Remove highlight after animation
-//         setTimeout(() => {
-//           contact.classList.remove('highlight-flash');
-//         }, 2000); // 2 seconds
-//       }
-//     });
-//   });
+// main.js
 
 document.addEventListener("DOMContentLoaded", () => {
   // ✅ Mobile Nav Toggle
@@ -147,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
       burger.classList.toggle("toggle");
     });
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
         navLinks.classList.remove("open");
         burger.classList.remove("toggle");
       });
@@ -160,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let started = false;
 
   function startCount() {
-    counters.forEach(counter => {
+    counters.forEach((counter) => {
       const updateCount = () => {
         const target = +counter.getAttribute("data-target");
         const current = +counter.innerText;
@@ -176,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       updateCount();
     });
   }
+
 
   const stats = document.querySelector(".hero-stats");
   if (stats) {
@@ -207,64 +72,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ Form Submission
-  // const form = document.getElementById('contactForm');
-  // if (form) {
-  //   form.addEventListener('submit', async function (e) {
-  //     e.preventDefault();
-  //     const formData = new FormData(form);
-  //     const response = await fetch(form.action, {
-  //       method: form.method,
-  //       body: formData,
-  //       headers: { 'Accept': 'application/json' }
-  //     });
+  // ✅ Contact Form Submission
+  const form = document.getElementById("contactForm");
+  if (form) {
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
 
-  //     if (response.ok) {
-  //       alert("Thank you! Your message has been sent.");
-  //       form.reset();
-  //     } else {
-  //       alert("Oops! There was a problem submitting your form.");
-  //     }
-  //   });
-  // }
+      const formData = new FormData(form);
 
-  const form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
 
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        alert(" Thank you! Your message has been sent.");
-        form.reset();
-      } else {
-        alert(" Oops! There was a problem submitting your form.");
-        console.error("Formspree error:", await response.json());
+        if (response.ok) {
+          alert(" Thank you! Your message has been sent.");
+          form.reset();
+        } else {
+          alert(" Oops! There was a problem submitting your form.");
+          console.error("Formspree error:", await response.json());
+        }
+      } catch (error) {
+        alert(" Network error. Please try again later.");
+        console.error("Network error during form submission:", error);
       }
-
-    } catch (error) {
-      alert(" Network error. Please try again later.");
-      console.error("Network error during form submission:", error);
-    }
-  });
-}
-
+    });
+  }
 
   // ✅ FAQ Toggle Behavior
-  document.querySelectorAll('.faq-item').forEach((item) => {
-    item.addEventListener('toggle', function () {
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    item.addEventListener("toggle", function () {
       if (this.open) {
-        document.querySelectorAll('.faq-item').forEach((otherItem) => {
+        document.querySelectorAll(".faq-item").forEach((otherItem) => {
           if (otherItem !== this) {
-            otherItem.removeAttribute('open');
+            otherItem.removeAttribute("open");
           }
         });
       }
@@ -272,42 +115,54 @@ if (form) {
   });
 
   // ✅ Modal Logic
-  const bannerBtn = document.querySelector('.banner-btn');
-  const closeModal = document.querySelector('.close-modal');
-  const consultModal = document.getElementById('consultModal');
+  const bannerBtn = document.querySelector(".banner-btn");
+  const closeModal = document.querySelector(".close-modal");
+  const consultModal = document.getElementById("consultModal");
 
   if (bannerBtn && consultModal) {
-    bannerBtn.addEventListener('click', function (e) {
+    bannerBtn.addEventListener("click", function (e) {
       e.preventDefault();
-      consultModal.style.display = 'block';
+      consultModal.style.display = "block";
     });
   }
 
   if (closeModal && consultModal) {
-    closeModal.addEventListener('click', function () {
-      consultModal.style.display = 'none';
+    closeModal.addEventListener("click", function () {
+      consultModal.style.display = "none";
     });
 
-    window.addEventListener('click', function (e) {
+    window.addEventListener("click", function (e) {
       if (e.target === consultModal) {
-        consultModal.style.display = 'none';
+        consultModal.style.display = "none";
       }
     });
   }
 
-  // ✅ Scroll to Contact
-//   document.querySelectorAll('.banner-btn, .btn-primary').forEach(button => {
-//     button.addEventListener('click', function (e) {
-//       e.preventDefault();
-//       const contact = document.getElementById('contact');
+  
+// ✅ Scrollspy for Active Nav Links on Same Page
+  const sections = document.querySelectorAll("section[id]");
+  const navLinkItems = document.querySelectorAll(".nav-links a[href^='#']");
 
-//       if (contact) {
-//         contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
-//         contact.classList.add('highlight-flash');
-//         setTimeout(() => {
-//           contact.classList.remove('highlight-flash');
-//         }, 2000);
-//       }
-//     });
-//   });
+  function setActiveNavLink() {
+    let current = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinkItems.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", setActiveNavLink);
+ 
 });
+
+  

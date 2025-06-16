@@ -135,6 +135,11 @@ button:hover {
   color: var(--accent-color);
 }
 
+.nav-links li a.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
 /* Hamburger styles */
 .burger {
   display: none;
@@ -794,6 +799,20 @@ button:hover {
   to { transform: translateY(0); opacity: 1; }
 }
 
+/* pricing page */
+
+
+
+.package-highlight {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-top: var(--space-sm);
+}
+
+
+
 .blog-title {
   font-size: var(--text-xxl);
   text-align: center;
@@ -912,6 +931,37 @@ button:hover {
   border-radius: 8px;
   margin: 2rem 0;
 }
+
+/* pricing page */
+/* Hero style for pricing page */
+.pricing-hero {
+  background-color: var(--bg-secondary); /* or a soft tone for contrast */
+  padding: 4rem 1rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.pricing-hero .section-title {
+  font-size: 2rem;
+  color: var(--primary-red); /* or your brand primary */
+  margin-bottom: 1rem;
+}
+
+.pricing-hero .section-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.pricing-hero .section-description {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
 
 
 
@@ -1118,4 +1168,84 @@ button:hover {
   .blog-content {
     padding: 0 1rem;
   }
+
+  /* Pricing page improvements */
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.service-card {
+  padding: var(--space-md);
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: var(--space-md);
+  text-align: left; /* keeps bullet lists clean */
+}
+
+.service-card h3,
+.service-card h4 {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.service-card ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.service-card ul li {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.package-highlight {
+  color: #084734;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 0.75rem;
+}
+
+/* Center the CTA section */
+#pricing .btn-primary {
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Ensure add-ons are stacked and readable */
+#pricing h3.section-title {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+#pricing .service-card p {
+  font-size: 0.95rem;
+}
+
+ .pricing-hero {
+    padding: 3rem 1rem;
+  }
+
+  .pricing-hero .section-title {
+    font-size: 1.6rem;
+  }
+
+  .pricing-hero .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .pricing-hero .section-description {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
 }

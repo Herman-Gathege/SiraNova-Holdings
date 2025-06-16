@@ -8,6 +8,20 @@
     <priority>1.0</priority>
   </url>
 
+   <!-- Pricing Page -->
+  <url>
+    <loc>https://webloom-tech.onrender.com/pricing.html</loc>
+    <lastmod>2025-06-13</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog Page -->
+  <url>
+    <loc>https://webloom-tech.onrender.com/blog.html</loc>
+    <lastmod>2025-06-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Sections -->
   <url>
     <loc>https://webloom-tech.onrender.com/#services</loc>
