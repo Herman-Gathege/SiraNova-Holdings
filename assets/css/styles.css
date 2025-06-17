@@ -980,7 +980,7 @@ button:hover {
   width: 50px;
   height: 50px;
   border: 6px solid #ffffff40;
-  border-top: 6px solid var(--accent-red, #e62815);
+  border-top: 6px solid var(--accent-red, #084734);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
