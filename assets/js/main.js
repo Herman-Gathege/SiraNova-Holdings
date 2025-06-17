@@ -162,6 +162,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("scroll", setActiveNavLink);
+
+  // ✅ Preloader fade-out
+const preloader = document.getElementById("preloader");
+window.addEventListener("load", () => {
+  if (preloader) {
+    preloader.style.opacity = "0";
+    preloader.style.pointerEvents = "none";
+    setTimeout(() => {
+      preloader.remove(); // fully removes from DOM
+    }, 500); // fade-out duration
+  }
+});
+
  
 });
 
