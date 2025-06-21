@@ -553,7 +553,7 @@ button:hover {
 
 
 /* FAQ Section - Updated */
-#faq {
+/* #faq {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
@@ -614,8 +614,86 @@ button:hover {
   color: var(--text-color);
 }
 
+.faq-item[open] p {
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.faq-item p {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+} */
+
+.faq-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-md);
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: var(--text-base);
+  font-family: var(--font-secondary);
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  gap: var(--space-sm); /* works now because of flex! */
+}
+
+.faq-question::after {
+  content: '+';
+  font-weight: bold;
+  font-size: 2rem;
+  color: var(--primary-color);
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+  content: '-';
+}
 
 
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  padding: 0 var(--space-md);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px; /* adjust as needed */
+  opacity: 1;
+  padding: var(--space-md);
+  
+}
+
+.faq-answer p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: var(--text-base);
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+
+
+
+
+/* Contact Section */
 .contact-text a:hover {
   text-decoration: underline;
 }

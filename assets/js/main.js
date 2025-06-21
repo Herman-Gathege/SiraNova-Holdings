@@ -101,15 +101,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ✅ FAQ Toggle Behavior
-  document.querySelectorAll(".faq-item").forEach((item) => {
-    item.addEventListener("toggle", function () {
-      if (this.open) {
-        document.querySelectorAll(".faq-item").forEach((otherItem) => {
-          if (otherItem !== this) {
-            otherItem.removeAttribute("open");
-          }
-        });
-      }
+  // document.querySelectorAll(".faq-item").forEach((item) => {
+  //   item.addEventListener("toggle", function () {
+  //     if (this.open) {
+  //       document.querySelectorAll(".faq-item").forEach((otherItem) => {
+  //         if (otherItem !== this) {
+  //           otherItem.removeAttribute("open");
+  //         }
+  //       });
+  //     }
+  //   });
+  // });
+
+  // Smooth FAQ accordion
+  document.querySelectorAll(".faq-question").forEach((button) => {
+    button.addEventListener("click", () => {
+      const faqItem = button.parentElement;
+      const faqGrid = faqItem.parentElement;
+
+      // Close all other items
+      faqGrid.querySelectorAll(".faq-item").forEach((item) => {
+        if (item !== faqItem) {
+          item.classList.remove("active");
+        }
+      });
+
+      // Toggle this item
+      faqItem.classList.toggle("active");
     });
   });
 
