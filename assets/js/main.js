@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
   const stats = document.querySelector(".hero-stats");
   if (stats) {
     window.addEventListener("scroll", () => {
@@ -138,8 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  
-// ✅ Scrollspy for Active Nav Links on Same Page
+  // ✅ Scrollspy for Active Nav Links on Same Page
   const sections = document.querySelectorAll("section[id]");
   const navLinkItems = document.querySelectorAll(".nav-links a[href^='#']");
 
@@ -163,19 +161,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", setActiveNavLink);
 
-  // ✅ Preloader fade-out
-const preloader = document.getElementById("preloader");
-window.addEventListener("load", () => {
-  if (preloader) {
-    preloader.style.opacity = "0";
-    preloader.style.pointerEvents = "none";
-    setTimeout(() => {
-      preloader.remove(); // fully removes from DOM
-    }, 500); // fade-out duration
-  }
-});
+  // ✅ Preloader fade-out with test delay
+  const preloader = document.getElementById("preloader");
 
- 
+  window.addEventListener("load", () => {
+    if (preloader) {
+      // Add a fake 2 second delay so you can see the preloader
+      setTimeout(() => {
+        preloader.style.opacity = "0";
+        preloader.style.pointerEvents = "none";
+        setTimeout(() => {
+          preloader.remove(); // fully remove after fade-out
+        }, 500);
+      }, 0); // <--- 2 seconds for testing
+    }
+  });
 });
-
-  
