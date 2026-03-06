@@ -1,12 +1,32 @@
 /* assets/css/style.css */
 
 :root {
-  /* Color Palette */
+  /* Color Palette
   --primary-color: #084734;
   --accent-color: #cef17b;
   --light-accent: #cdedb3;
   --text-color: #1a1a1a;
+  --bg-color: #ffffff; */
+
+
+
+  /* Primary Brand Colors */
+  --primary-color: #092350;      /* Deep corporate blue */
+  --secondary-color: #062a63;    /* Dark navy for headers/nav */
+
+  /* Accent Colors */
+  --accent-color: #8bd3ff;       /* Bright modern blue accent */
+  --light-accent: #d6efff;       /* Soft highlight background */
+
+  /* Text */
+  --text-color: #1a1a1a;
+  --text-light: #6b7280;
+
+  /* Backgrounds */
   --bg-color: #ffffff;
+  --section-bg: #f6f9ff;
+
+
 
   /* Font families */
   --font-primary: 'Poppins', sans-serif;
@@ -1411,4 +1431,35 @@ button:hover {
     padding: 0 1rem;
   }
 
+}
+
+.leadership-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.leader-card{
+  background:#fff;
+  padding:30px;
+  text-align:center;
+  border-radius:10px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  transition:transform 0.3s ease;
+}
+
+.leader-card:hover{
+  transform:translateY(-5px);
+}
+
+.leader-avatar{
+  font-size:40px;
+  color:#2e7d32;
+  margin-bottom:15px;
+}
+
+.leader-role{
+  color:#666;
+  font-weight:500;
 }
