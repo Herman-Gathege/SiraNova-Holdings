@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://webloom-tech.onrender.com/sitemap.xml
+Sitemap: https://siranova-holdings.onrender.com/sitemap.xml
